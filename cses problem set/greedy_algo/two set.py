@@ -10,7 +10,8 @@ YES
 2 3 
 """
 
-
+# my ulta approch 
+'''
 import sys
 input = sys.stdin.readline
 
@@ -43,6 +44,38 @@ else:
     for j in range(1, n + 1):
         if j not in set2:
             set1.add(j)
+
+    print("YES")
+    print(len(set1))
+    print(*set1)
+
+    print(len(set2))
+    print(*set2)
+'''
+
+
+#we can write this also
+
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+
+set1 = set()
+set2 = set()
+
+total = n * (n + 1) // 2
+if total % 2 == 1:
+    print("NO")
+else:
+    half=total//2
+
+    for i in range(n,0,-1):
+        if i<=half:
+            set1.add(i)
+            half-=i
+        else:
+            set2.add(i)
 
     print("YES")
     print(len(set1))
